@@ -1,4 +1,4 @@
-package kr.co.hyperinfo.config;
+package kr.co.hyperinfo.demo.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
