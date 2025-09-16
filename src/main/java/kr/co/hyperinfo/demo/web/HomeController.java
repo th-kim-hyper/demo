@@ -1,5 +1,6 @@
 package kr.co.hyperinfo.demo.web;
 
+import java.nio.file.Paths;
 import java.util.regex.Pattern;
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
@@ -64,6 +65,10 @@ public class HomeController {
             // Expects page to have a heading with the name of Installation.
             assertThat(page.getByRole(AriaRole.HEADING,
                     new Page.GetByRoleOptions().setName("Installation"))).isVisible();
+
+            // 스크린샷 찍기
+            page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("pw-homepage.png")));
+            log.info("#### page.screenshot() ####");
         }
         model.addAttribute("page", "pw");
         return "pw";
