@@ -30,6 +30,7 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
+		<playwright.version>1.47.0</playwright.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -84,12 +85,31 @@
 		<dependency>
 			<groupId>com.microsoft.playwright</groupId>
 			<artifactId>playwright</artifactId>
-			<version>1.52.0</version>
+			<version>${playwright.version}</version>
 		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
+			<!-- <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>playwright-install</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>com.microsoft.playwright.CLI</mainClass>
+                            <args>
+                                <arg>install</arg>
+                            </args>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>

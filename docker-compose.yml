@@ -1,0 +1,12 @@
+services:
+  tomcat10:
+    image: tomcat10:1.0
+    container_name: demo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./webapps:/usr/local/tomcat/webapps
+    restart: unless-stopped
