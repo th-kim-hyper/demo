@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8" />
+    <title layout:fragment="title">Demo</title>
+    <link rel="stylesheet" href="/css/main.css" />
+</head>
+<body>
+    <div th:insert="fragments/header :: siteHeader"></div>
+
+    <main layout:fragment="content">
+        <div>Default content</div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 HyperInfo</p>
+    </footer>
+</body>
+</html>

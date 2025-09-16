@@ -1,0 +1,8 @@
+<header th:fragment="siteHeader">
+  <h1>Demo Application</h1>
+  <nav>
+    <a th:href="@{/}" th:classappend="${page == 'home' ? ' active' : ''}">Home</a>
+    |
+    <a th:href="@{/about}" th:classappend="${page == 'about' ? ' active' : ''}">About</a>
+  </nav>
+</header>

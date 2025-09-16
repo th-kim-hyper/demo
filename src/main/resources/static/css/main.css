@@ -1,0 +1,6 @@
+header { background: #f4f4f4; padding: 12px; }
+header h1 { display: inline-block; margin: 0 16px 0 0; font-size: 1.2rem; }
+nav { display: inline-block; }
+nav a { color: #333; text-decoration: none; margin: 0 8px; padding: 4px 8px; border-radius: 4px; }
+nav a:hover { background: #e2e2e2; }
+nav a.active { background: #007acc; color: white; }
