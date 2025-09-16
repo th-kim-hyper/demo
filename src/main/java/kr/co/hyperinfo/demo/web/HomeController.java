@@ -44,7 +44,7 @@ public class HomeController {
             Page page = browser.newPage();
             page.navigate("https://playwright.dev");
 
-            log.info("#### page.navigate(\"https://playwright.dev\") ####");
+            log.info("#### page.navigate(https://playwright.dev) ####");
 
             // Expect a title "to contain" a substring.
             assertThat(page).hasTitle(Pattern.compile("Playwright"));
