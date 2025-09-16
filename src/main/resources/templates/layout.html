@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/main.css" />
 </head>
 <body>
-    <div th:insert="fragments/header :: siteHeader"></div>
+    <div th:insert="~{fragments/header :: siteHeader}"></div>
 
     <main layout:fragment="content">
         <div>Default content</div>

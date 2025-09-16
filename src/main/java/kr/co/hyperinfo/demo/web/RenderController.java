@@ -40,8 +40,8 @@ public class RenderController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Template render error: " + e.getMessage());
         }
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.TEXT_HTML);
+    HttpHeaders headers = new HttpHeaders();
+    headers.setContentType(MediaType.parseMediaType("text/html; charset=UTF-8"));
     return new ResponseEntity<>(rendered, headers, HttpStatus.OK);
     }
 }
