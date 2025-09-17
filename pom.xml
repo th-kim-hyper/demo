@@ -147,6 +147,28 @@
 						-Xshare:off</argLine>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>3.1.0</version>
+				<executions>
+					<execution>
+						<id>copy-to-tomcat-webapps</id>
+						<phase>package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<target>
+								<!-- project.build.finalName.war (기본: artifactId-version.war)을 복사하여 ROOT.war로 저장 -->
+								<copy file="${project.build.directory}/${project.build.finalName}.war"
+									  tofile="${project.basedir}/webapps/ROOT.war"
+									  overwrite="true" />
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 

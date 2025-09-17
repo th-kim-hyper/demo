@@ -6,7 +6,25 @@
   <body>
     <section layout:fragment="content">
       <h2>Playwright Demo</h2>
-      <p>한글도 됩니까?</p>
+      <div id="result" th:if="${result != null}">
+        <p th:text="'로그인: ' + (${result.loginSuccess} ? '성공' : '실패')"></p>
+        <p><strong>아이디:</strong> <span th:text="${result.userId}">N/A</span></p>
+        <p><strong>비밀번호:</strong> <span th:text="${result.password}">N/A</span></p>
+        <p><strong>이름:</strong> <span th:text="${result.name}">N/A</span></p>
+        <p><strong>전화:</strong> <span th:text="${result.phone}">N/A</span></p>
+        <p><strong>소속:</strong> <span th:text="${result.org}">N/A</span></p>
+        <p><strong>생년월일:</strong> <span th:text="${result.dob}">N/A</span></p>
+        <p><strong>직책:</strong> <span th:text="${result.position}">N/A</span></p>
+
+        <div th:if="${result.image != null}">
+          <p><strong>스크린샷:</strong></p>
+          <img th:src="${result.image}" alt="screenshot" style="max-width:100%;height:auto;border:1px solid #ccc"/>
+        </div>
+      </div>
+
+      <div th:unless="${result != null}">
+        <p>결과가 없습니다.</p>
+      </div>
     </section>
   </body>
 </html>
